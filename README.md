@@ -7,7 +7,7 @@ Patching code in to operators for quick unit testing presents some challenges.  
 ## Deploying a test binary
 1. Deploy an HTTP server in to the cluster.  In this example, I'm using the project name `bastion`.
 ~~~
-oc new project bastion
+oc new-project bastion
 oc new-app danjellz/http-server
 ~~~
 
