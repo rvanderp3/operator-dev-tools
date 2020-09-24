@@ -4,6 +4,7 @@ Patching code in to operators for quick unit testing presents some challenges.  
 - A sandbox OpenShift 4.x cluster
 - cluster-admin privileges
 
+## Deploying a test binary
 1. Deploy an HTTP server in to the cluster.  In this example, I'm using the project name `bastion`.
 ~~~
 oc new project bastion
@@ -40,7 +41,7 @@ oc patch clusterversion version --type json -p "$(cat version-patch-add-override
 
 4. Build your code!
 
-5. Upload the bin to the HTTP server pod
+5. Upload the binary to the HTTP server pod
 ~~~
 oc cp ./machine-api-operator http-server-7b78d6d5cc-dh5gh:.
 ~~~
