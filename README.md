@@ -55,7 +55,12 @@ podman tag my-machine-api-operator default-route-openshift-image-registry.apps-c
 
 Note: The format of the tag must be `registry/namespace/image:tag`.  The namespace is critical as read/writes to the registry are limited to namespaces for which you have authorization.
 
-8. Prevent the CVO from managing the operator resources you are modifying.  In this example, a `Deployment` in the `openshift-machine-api` namespace.
+8. Push the image:
+~~~
+podman push default-route-openshift-image-registry.apps-crc.testing/openshift-machine-api/my-machine-api-operator:latest --tls-verify=false
+~~~
+
+9. Prevent the CVO from managing the operator resources you are modifying.  In this example, a `Deployment` in the `openshift-machine-api` namespace.
 
 ~~~
 cat <<EOF >version-patch-add-override.yaml
