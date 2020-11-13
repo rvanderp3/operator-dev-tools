@@ -80,7 +80,7 @@ oc patch clusterversion version --type json -p "$(cat version-patch-add-override
 See [Setting Objects Unmanaged](https://github.com/openshift/cluster-version-operator/blob/master/docs/dev/clusterversion.md#setting-objects-unmanaged) for details.
 
 
-6. Modify the `Deployment`, `ReplicaSet`, etc... to use the pushed image.
+10. Modify the `Deployment`, `ReplicaSet`, etc... to use the pushed image.
 
 ~~~
       - args:
